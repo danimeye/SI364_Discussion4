@@ -1,0 +1,14 @@
+<h1>Weather Form</h1>
+<form action="/weather_form" method="POST">
+    {{ form.hidden_tag() }}
+
+    {% for message in get_flashed_messages() %}
+    	{% for key in message %}
+    		<b>{{ key }}</b> - <i> {{ message[key][0] }}</i> <br>
+    	{% endfor %}
+	{% endfor %}
+
+    {{ form.zip_code.label }} {{ form.zip_code() }}<br>
+    {{ form.submit() }}<br>
+
+</form>
